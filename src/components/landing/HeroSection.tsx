@@ -30,7 +30,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.SLOW, delay: ANIMATION_DELAYS.FAST }}
-          className="mb-6 max-w-4xl font-display text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl"
+          className="mb-6 max-w-4xl font-display text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl px-4"
         >
           Predict Drug Risks with{" "}
           <span className="bg-gradient-to-r from-secondary to-primary-foreground bg-clip-text text-transparent">
@@ -42,7 +42,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.SLOW, delay: ANIMATION_DELAYS.MEDIUM }}
-          className="mb-10 max-w-2xl text-lg text-primary-foreground/70 md:text-xl"
+          className="mb-10 max-w-2xl text-base sm:text-lg text-primary-foreground/70 md:text-xl px-4"
         >
           Upload patient VCF files, analyze genetic variants, and receive CPIC-aligned 
           dosage recommendations powered by AI — reducing adverse drug reactions.
@@ -52,16 +52,16 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.SLOW, delay: ANIMATION_DELAYS.SLOW }}
-          className="flex flex-col items-center gap-6 rounded-2xl border-2 border-secondary bg-secondary/10 px-8 py-8 backdrop-blur-sm sm:flex-row sm:gap-4"
+          className="flex flex-col items-center justify-center gap-4 sm:gap-6 rounded-2xl border-2 border-secondary bg-secondary/10 px-6 sm:px-8 py-6 sm:py-8 backdrop-blur-sm sm:flex-row w-full max-w-md sm:max-w-none mx-4"
         >
-          <Link to="/dashboard">
-            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 gap-2 px-8 text-base">
-              <Upload className="h-5 w-5" />
+          <Link to="/dashboard" className="w-full sm:w-auto">
+            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 gap-2 px-6 sm:px-8 text-sm sm:text-base w-full sm:w-auto">
+              <Upload className="h-4 w-4 sm:h-5 sm:w-5" />
               Upload VCF &amp; Analyze
             </Button>
           </Link>
-          <a href="#features">
-            <Button size="lg" className="gap-2 bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 text-base">
+          <a href="#features" className="w-full sm:w-auto">
+            <Button size="lg" className="gap-2 bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 sm:px-8 text-sm sm:text-base w-full sm:w-auto">
               Explore Features
               <ArrowRight className="h-4 w-4" />
             </Button>
@@ -73,7 +73,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.SLOW, delay: 0.5 }}
-          className="mt-20 grid grid-cols-2 gap-6 rounded-2xl px-8 py-8 md:grid-cols-4"
+          className="mt-12 sm:mt-20 grid grid-cols-2 gap-3 sm:gap-6 rounded-2xl px-4 sm:px-8 py-6 sm:py-8 md:grid-cols-4 w-full max-w-5xl"
         >
           {[
             { value: "100K+", label: "ADR Deaths/Year Preventable" },
@@ -83,10 +83,10 @@ const HeroSection = () => {
           ].map((stat, i) => (
             <div
               key={i}
-              className="rounded-xl border-2 border-secondary bg-primary-foreground/5 px-6 py-4 backdrop-blur-sm"
+              className="rounded-xl border-2 border-secondary bg-primary-foreground/5 px-3 sm:px-6 py-3 sm:py-4 backdrop-blur-sm"
             >
-              <div className="font-display text-2xl font-bold text-secondary">{stat.value}</div>
-              <div className="mt-1 text-xs text-primary-foreground">{stat.label}</div>
+              <div className="font-display text-xl sm:text-2xl font-bold text-secondary">{stat.value}</div>
+              <div className="mt-1 text-xs sm:text-sm text-primary-foreground">{stat.label}</div>
             </div>
           ))}
         </motion.div>

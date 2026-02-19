@@ -37,16 +37,8 @@ const DashboardSidebar = ({
         collapsed ? "w-16" : "w-64"
       )}
     >
-      {/* Brand area */}
-      <div className="flex items-center justify-between border-b border-border px-3 py-4">
-        {!collapsed && (
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-              <Dna className="h-4 w-4 text-primary-foreground" />
-            </div>
-            <span className="font-display text-sm font-bold text-foreground">Dashboard</span>
-          </div>
-        )}
+      {/* Brand area - removed */}
+      <div className="border-b border-border px-3 py-4">
         <button
           onClick={() => setCollapsed(!collapsed)}
           className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"

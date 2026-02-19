@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
 import UploadSection from "@/components/dashboard/UploadSection";
@@ -20,6 +21,7 @@ const DashboardContent = () => {
   const [analysisResults, setAnalysisResults] = useState<AnalysisResult[]>([]);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [currentResult, setCurrentResult] = useState<AnalysisResult | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleCopy = async () => {
     if (!currentResult) return;
@@ -77,19 +79,41 @@ const DashboardContent = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="flex pt-16">
-        <DashboardSidebar
-          activeView={activeView}
-          onViewChange={setActiveView}
-          selectedPatient={selectedPatient}
-          onSelectPatient={(id) => {
-            setSelectedPatient(id);
-            setActiveView("results");
-          }}
-          patients={[]}
-        />
 
-        <main className="flex-1 overflow-y-auto p-6 lg:p-8">
+      <div className="flex flex-col md:flex-row pt-16">
+        {/* Mobile sidebar toggle */}
+        <button
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+          className="md:hidden fixed bottom-4 right-4 z-50 rounded-full bg-primary p-3 text-primary-foreground shadow-lg"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        {/* Sidebar - hidden on mobile unless open */}
+        <div className={`${sidebarOpen ? 'block' : 'hidden'} md:block fixed md:relative inset-0 z-40 md:z-auto bg-black/50 md:bg-transparent`} onClick={() => setSidebarOpen(false)}>
+          <div className="h-full w-64 bg-background md:bg-transparent" onClick={(e) => e.stopPropagation()}>
+            <DashboardSidebar
+              activeView={activeView}
+              onViewChange={(view) => {
+                setActiveView(view);
+                setSidebarOpen(false);
+              }}
+              selectedPatient={selectedPatient}
+              onSelectPatient={(id) => {
+                setSelectedPatient(id);
+                setActiveView("results");
+                setSidebarOpen(false);
+              }}
+              patients={[]}
+            />
+          </div>
+        </div>
+
+        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 w-full">
           <ErrorBoundary>
             {activeView === "upload" && (
               <div className="mx-auto max-w-2xl">
@@ -98,7 +122,7 @@ const DashboardContent = () => {
             )}
 
             {activeView === "results" && currentPatientResult && (
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <ResultsHeader
                   patientId={currentPatientResult.patient_id}
                   onCopy={handleCopy}
@@ -111,7 +135,9 @@ const DashboardContent = () => {
                   timestamp={new Date(currentPatientResult.timestamp).toLocaleDateString()}
                 />
                 <DashboardCharts results={analysisResults} />
-                <DrugResultsTable results={analysisResults} />
+                <div className="overflow-x-auto">
+                  <DrugResultsTable results={analysisResults} />
+                </div>
                 <ResultDetail result={currentPatientResult} />
               </div>
             )}

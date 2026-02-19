@@ -19,16 +19,17 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl"
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <Dna className="h-5 w-5 text-primary-foreground" />
-          </div>
-          <span className="font-display text-lg font-bold text-foreground">
-            PharmaGen <span className="text-secondary">AI</span>
-          </span>
+      <div className="container mx-auto flex h-16 items-center justify-between px-2 sm:px-4">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity -ml-4 sm:-ml-8 md:-ml-12 lg:-ml-16">
+          <img 
+            src="/pharmagenai.png" 
+            alt="PharmaAI" 
+            className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 object-contain"
+          />
         </Link>
 
+        {/* Navigation Links */}
         <div className="hidden items-center gap-1 md:flex">
           {links.map((link) => (
             <Link
@@ -45,6 +46,7 @@ const Navbar = () => {
           ))}
         </div>
 
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="text-foreground md:hidden"
