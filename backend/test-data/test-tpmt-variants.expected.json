@@ -1,0 +1,64 @@
+{
+  "description": "Test VCF containing TPMT variants",
+  "vcf_file": "test-tpmt-variants.vcf",
+  "expected_outcomes": {
+    "total_vcf_variants": 3,
+    "pgx_variants_identified": 3,
+    "pgx_variants_matched": 3,
+    "pgx_variants_unmatched": 0,
+    "detection_state": "pgx_variants_found_all_matched",
+    "annotation_completeness": 1.0,
+    "average_variant_quality": 40.53,
+    "confidence_score_range": {
+      "min": 0.82,
+      "max": 0.95
+    },
+    "evidence_distribution": {
+      "A": 3,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "unknown": 0
+    },
+    "variants_by_gene": {
+      "TPMT": 3
+    },
+    "variants_by_drug": {
+      "azathioprine": 3,
+      "mercaptopurine": 3,
+      "thioguanine": 3
+    },
+    "expected_variants": [
+      {
+        "rsid": "rs1800462",
+        "gene": "TPMT",
+        "star_allele": "*2",
+        "chromosome": "6",
+        "position": 18139228,
+        "functional_status": "decreased",
+        "evidence_level": "A",
+        "biological_mechanism": "Reduced enzyme activity increasing risk of thiopurine toxicity"
+      },
+      {
+        "rsid": "rs1800460",
+        "gene": "TPMT",
+        "star_allele": "*3A",
+        "chromosome": "6",
+        "position": 18143955,
+        "functional_status": "no_function",
+        "evidence_level": "A",
+        "biological_mechanism": "Loss of function allele requiring significant dose reduction of thiopurines"
+      },
+      {
+        "rsid": "rs1142345",
+        "gene": "TPMT",
+        "star_allele": "*3C",
+        "chromosome": "6",
+        "position": 18139228,
+        "functional_status": "no_function",
+        "evidence_level": "A",
+        "biological_mechanism": "Loss of function allele with high risk of severe myelosuppression"
+      }
+    ]
+  }
+}

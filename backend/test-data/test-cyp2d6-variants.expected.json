@@ -1,0 +1,64 @@
+{
+  "description": "Test VCF containing CYP2D6 variants",
+  "vcf_file": "test-cyp2d6-variants.vcf",
+  "expected_outcomes": {
+    "total_vcf_variants": 3,
+    "pgx_variants_identified": 3,
+    "pgx_variants_matched": 3,
+    "pgx_variants_unmatched": 0,
+    "detection_state": "pgx_variants_found_all_matched",
+    "annotation_completeness": 1.0,
+    "average_variant_quality": 38.83,
+    "confidence_score_range": {
+      "min": 0.80,
+      "max": 0.95
+    },
+    "evidence_distribution": {
+      "A": 3,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "unknown": 0
+    },
+    "variants_by_gene": {
+      "CYP2D6": 3
+    },
+    "variants_by_drug": {
+      "codeine": 3,
+      "tramadol": 3,
+      "tamoxifen": 3
+    },
+    "expected_variants": [
+      {
+        "rsid": "rs3892097",
+        "gene": "CYP2D6",
+        "star_allele": "*4",
+        "chromosome": "22",
+        "position": 42130692,
+        "functional_status": "no_function",
+        "evidence_level": "A",
+        "biological_mechanism": "Non-functional allele resulting in no enzyme activity, leading to poor metabolizer phenotype for CYP2D6 substrates"
+      },
+      {
+        "rsid": "rs1065852",
+        "gene": "CYP2D6",
+        "star_allele": "*10",
+        "chromosome": "22",
+        "position": 42126611,
+        "functional_status": "decreased",
+        "evidence_level": "A",
+        "biological_mechanism": "Reduced enzyme activity leading to intermediate metabolizer phenotype"
+      },
+      {
+        "rsid": "rs28371725",
+        "gene": "CYP2D6",
+        "star_allele": "*41",
+        "chromosome": "22",
+        "position": 42128945,
+        "functional_status": "decreased",
+        "evidence_level": "A",
+        "biological_mechanism": "Reduced enzyme activity affecting drug metabolism efficiency"
+      }
+    ]
+  }
+}

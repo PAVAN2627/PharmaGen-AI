@@ -1,0 +1,96 @@
+{
+  "description": "Test VCF containing at least one variant from each supported gene",
+  "vcf_file": "test-all-genes.vcf",
+  "expected_outcomes": {
+    "total_vcf_variants": 6,
+    "pgx_variants_identified": 6,
+    "pgx_variants_matched": 6,
+    "pgx_variants_unmatched": 0,
+    "detection_state": "pgx_variants_found_all_matched",
+    "annotation_completeness": 1.0,
+    "average_variant_quality": 39.37,
+    "confidence_score_range": {
+      "min": 0.85,
+      "max": 0.95
+    },
+    "evidence_distribution": {
+      "A": 6,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "unknown": 0
+    },
+    "variants_by_gene": {
+      "CYP2D6": 1,
+      "CYP2C19": 1,
+      "CYP2C9": 1,
+      "SLCO1B1": 1,
+      "TPMT": 1,
+      "DPYD": 1
+    },
+    "variants_by_drug": {
+      "codeine": 1,
+      "tramadol": 1,
+      "tamoxifen": 1,
+      "clopidogrel": 1,
+      "voriconazole": 1,
+      "sertraline": 1,
+      "warfarin": 1,
+      "phenytoin": 1,
+      "celecoxib": 1,
+      "simvastatin": 1,
+      "atorvastatin": 1,
+      "pravastatin": 1,
+      "azathioprine": 1,
+      "mercaptopurine": 1,
+      "thioguanine": 1,
+      "5-fluorouracil": 1,
+      "capecitabine": 1,
+      "tegafur": 1
+    },
+    "expected_variants": [
+      {
+        "rsid": "rs3892097",
+        "gene": "CYP2D6",
+        "star_allele": "*4",
+        "functional_status": "no_function",
+        "evidence_level": "A"
+      },
+      {
+        "rsid": "rs4244285",
+        "gene": "CYP2C19",
+        "star_allele": "*2",
+        "functional_status": "no_function",
+        "evidence_level": "A"
+      },
+      {
+        "rsid": "rs1799853",
+        "gene": "CYP2C9",
+        "star_allele": "*2",
+        "functional_status": "decreased",
+        "evidence_level": "A"
+      },
+      {
+        "rsid": "rs4149056",
+        "gene": "SLCO1B1",
+        "star_allele": "*5",
+        "functional_status": "decreased",
+        "evidence_level": "A"
+      },
+      {
+        "rsid": "rs1800462",
+        "gene": "TPMT",
+        "star_allele": "*2",
+        "functional_status": "decreased",
+        "evidence_level": "A"
+      },
+      {
+        "rsid": "rs3918290",
+        "gene": "DPYD",
+        "star_allele": "*2A",
+        "functional_status": "no_function",
+        "evidence_level": "A"
+      }
+    ]
+  }
+}

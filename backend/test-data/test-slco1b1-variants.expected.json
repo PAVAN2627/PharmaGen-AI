@@ -1,0 +1,54 @@
+{
+  "description": "Test VCF containing SLCO1B1 variants",
+  "vcf_file": "test-slco1b1-variants.vcf",
+  "expected_outcomes": {
+    "total_vcf_variants": 2,
+    "pgx_variants_identified": 2,
+    "pgx_variants_matched": 2,
+    "pgx_variants_unmatched": 0,
+    "detection_state": "pgx_variants_found_all_matched",
+    "annotation_completeness": 1.0,
+    "average_variant_quality": 35.1,
+    "confidence_score_range": {
+      "min": 0.75,
+      "max": 0.90
+    },
+    "evidence_distribution": {
+      "A": 1,
+      "B": 1,
+      "C": 0,
+      "D": 0,
+      "unknown": 0
+    },
+    "variants_by_gene": {
+      "SLCO1B1": 2
+    },
+    "variants_by_drug": {
+      "simvastatin": 2,
+      "atorvastatin": 2,
+      "pravastatin": 2
+    },
+    "expected_variants": [
+      {
+        "rsid": "rs4149056",
+        "gene": "SLCO1B1",
+        "star_allele": "*5",
+        "chromosome": "12",
+        "position": 21178615,
+        "functional_status": "decreased",
+        "evidence_level": "A",
+        "biological_mechanism": "Reduced transporter function leading to increased statin exposure and myopathy risk"
+      },
+      {
+        "rsid": "rs2306283",
+        "gene": "SLCO1B1",
+        "star_allele": "*1B",
+        "chromosome": "12",
+        "position": 21172734,
+        "functional_status": "increased",
+        "evidence_level": "B",
+        "biological_mechanism": "Increased transporter function affecting statin uptake into hepatocytes"
+      }
+    ]
+  }
+}

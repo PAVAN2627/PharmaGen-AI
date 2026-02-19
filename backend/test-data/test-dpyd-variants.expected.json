@@ -1,0 +1,64 @@
+{
+  "description": "Test VCF containing DPYD variants",
+  "vcf_file": "test-dpyd-variants.vcf",
+  "expected_outcomes": {
+    "total_vcf_variants": 3,
+    "pgx_variants_identified": 3,
+    "pgx_variants_matched": 3,
+    "pgx_variants_unmatched": 0,
+    "detection_state": "pgx_variants_found_all_matched",
+    "annotation_completeness": 1.0,
+    "average_variant_quality": 40.0,
+    "confidence_score_range": {
+      "min": 0.80,
+      "max": 0.95
+    },
+    "evidence_distribution": {
+      "A": 2,
+      "B": 1,
+      "C": 0,
+      "D": 0,
+      "unknown": 0
+    },
+    "variants_by_gene": {
+      "DPYD": 3
+    },
+    "variants_by_drug": {
+      "5-fluorouracil": 3,
+      "capecitabine": 3,
+      "tegafur": 3
+    },
+    "expected_variants": [
+      {
+        "rsid": "rs3918290",
+        "gene": "DPYD",
+        "star_allele": "*2A",
+        "chromosome": "1",
+        "position": 97915614,
+        "functional_status": "no_function",
+        "evidence_level": "A",
+        "biological_mechanism": "Complete loss of function leading to severe fluoropyrimidine toxicity risk"
+      },
+      {
+        "rsid": "rs55886062",
+        "gene": "DPYD",
+        "star_allele": "*13",
+        "chromosome": "1",
+        "position": 98205966,
+        "functional_status": "decreased",
+        "evidence_level": "A",
+        "biological_mechanism": "Reduced enzyme activity requiring dose reduction of fluoropyrimidines"
+      },
+      {
+        "rsid": "rs67376798",
+        "gene": "DPYD",
+        "star_allele": "*2B",
+        "chromosome": "1",
+        "position": 97450058,
+        "functional_status": "decreased",
+        "evidence_level": "B",
+        "biological_mechanism": "Reduced enzyme activity with moderate impact on drug clearance"
+      }
+    ]
+  }
+}

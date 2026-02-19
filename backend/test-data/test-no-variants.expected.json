@@ -1,0 +1,28 @@
+{
+  "description": "Test VCF with valid header but no variant lines",
+  "vcf_file": "test-no-variants.vcf",
+  "expected_outcomes": {
+    "total_vcf_variants": 0,
+    "pgx_variants_identified": 0,
+    "pgx_variants_matched": 0,
+    "pgx_variants_unmatched": 0,
+    "detection_state": "no_variants_in_vcf",
+    "annotation_completeness": "N/A",
+    "average_variant_quality": 0,
+    "confidence_score_range": {
+      "min": 0.0,
+      "max": 0.0
+    },
+    "evidence_distribution": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "unknown": 0
+    },
+    "variants_by_gene": {},
+    "variants_by_drug": {},
+    "expected_variants": [],
+    "notes": "This VCF has a valid header but contains no variant data. The system should handle this gracefully and report 'no_variants_in_vcf' state rather than treating it as an error."
+  }
+}

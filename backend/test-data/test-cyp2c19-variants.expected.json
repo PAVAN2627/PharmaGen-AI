@@ -1,0 +1,64 @@
+{
+  "description": "Test VCF containing CYP2C19 variants",
+  "vcf_file": "test-cyp2c19-variants.vcf",
+  "expected_outcomes": {
+    "total_vcf_variants": 3,
+    "pgx_variants_identified": 3,
+    "pgx_variants_matched": 3,
+    "pgx_variants_unmatched": 0,
+    "detection_state": "pgx_variants_found_all_matched",
+    "annotation_completeness": 1.0,
+    "average_variant_quality": 42.87,
+    "confidence_score_range": {
+      "min": 0.82,
+      "max": 0.95
+    },
+    "evidence_distribution": {
+      "A": 3,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "unknown": 0
+    },
+    "variants_by_gene": {
+      "CYP2C19": 3
+    },
+    "variants_by_drug": {
+      "clopidogrel": 3,
+      "voriconazole": 3,
+      "sertraline": 3
+    },
+    "expected_variants": [
+      {
+        "rsid": "rs4244285",
+        "gene": "CYP2C19",
+        "star_allele": "*2",
+        "chromosome": "10",
+        "position": 94781859,
+        "functional_status": "no_function",
+        "evidence_level": "A",
+        "biological_mechanism": "Loss of function allele resulting in poor metabolizer phenotype for CYP2C19 substrates"
+      },
+      {
+        "rsid": "rs4986893",
+        "gene": "CYP2C19",
+        "star_allele": "*3",
+        "chromosome": "10",
+        "position": 94781858,
+        "functional_status": "no_function",
+        "evidence_level": "A",
+        "biological_mechanism": "Loss of function allele contributing to poor metabolizer status"
+      },
+      {
+        "rsid": "rs12248560",
+        "gene": "CYP2C19",
+        "star_allele": "*17",
+        "chromosome": "10",
+        "position": 94762706,
+        "functional_status": "increased",
+        "evidence_level": "A",
+        "biological_mechanism": "Increased enzyme activity leading to rapid metabolizer phenotype"
+      }
+    ]
+  }
+}

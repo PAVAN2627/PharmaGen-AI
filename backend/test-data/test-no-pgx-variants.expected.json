@@ -1,0 +1,28 @@
+{
+  "description": "Test VCF containing variants in non-pharmacogenomic genes only",
+  "vcf_file": "test-no-pgx-variants.vcf",
+  "expected_outcomes": {
+    "total_vcf_variants": 3,
+    "pgx_variants_identified": 0,
+    "pgx_variants_matched": 0,
+    "pgx_variants_unmatched": 0,
+    "detection_state": "no_pgx_variants_detected",
+    "annotation_completeness": "N/A",
+    "average_variant_quality": 30.3,
+    "confidence_score_range": {
+      "min": 0.0,
+      "max": 0.30
+    },
+    "evidence_distribution": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "unknown": 0
+    },
+    "variants_by_gene": {},
+    "variants_by_drug": {},
+    "expected_variants": [],
+    "notes": "This VCF contains variants in BRCA1, TP53, and BRCA2 genes which are not part of the pharmacogenomic panel. The system should correctly identify that no PGx variants are present."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "description": "Test VCF containing CYP2C9 variants",
+  "vcf_file": "test-cyp2c9-variants.vcf",
+  "expected_outcomes": {
+    "total_vcf_variants": 2,
+    "pgx_variants_identified": 2,
+    "pgx_variants_matched": 2,
+    "pgx_variants_unmatched": 0,
+    "detection_state": "pgx_variants_found_all_matched",
+    "annotation_completeness": 1.0,
+    "average_variant_quality": 39.95,
+    "confidence_score_range": {
+      "min": 0.82,
+      "max": 0.95
+    },
+    "evidence_distribution": {
+      "A": 2,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "unknown": 0
+    },
+    "variants_by_gene": {
+      "CYP2C9": 2
+    },
+    "variants_by_drug": {
+      "warfarin": 2,
+      "phenytoin": 2,
+      "celecoxib": 2
+    },
+    "expected_variants": [
+      {
+        "rsid": "rs1799853",
+        "gene": "CYP2C9",
+        "star_allele": "*2",
+        "chromosome": "10",
+        "position": 94942290,
+        "functional_status": "decreased",
+        "evidence_level": "A",
+        "biological_mechanism": "Reduced enzyme activity affecting warfarin metabolism, requiring lower doses"
+      },
+      {
+        "rsid": "rs1057910",
+        "gene": "CYP2C9",
+        "star_allele": "*3",
+        "chromosome": "10",
+        "position": 94981296,
+        "functional_status": "decreased",
+        "evidence_level": "A",
+        "biological_mechanism": "Significantly reduced enzyme activity with major impact on drug clearance"
+      }
+    ]
+  }
+}
