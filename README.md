@@ -20,7 +20,8 @@ PharmaAI solves this critical healthcare challenge by automating pharmacogenomic
 
 ## 🚀 Live Demo & Submission Links
 
-### **[🌐 LIVE APPLICATION](https://your-deployed-url.com)** *(Add your hosted URL here)*
+### **[🌐 LIVE APPLICATION](https://pharma-gen-ai.vercel.app)** 
+### **[🔗 BACKEND API](https://pharmagen-ai.onrender.com)**
 ### **[🎬 LINKEDIN VIDEO DEMO](https://linkedin.com/feed/...)** *(Add your LinkedIn video link here - tag @RIFT)*
 ### **[📦 GITHUB REPOSITORY](https://github.com/yourusername/PharmaAI)** *(Public repo with full source code)*
 
@@ -698,17 +699,19 @@ npm install && cd backend && npm install
 - [x] **Error Handling**: Comprehensive error messages
 - [x] **Testing**: 10+ test VCF files with expected outputs
 
-### **Submission Requirements** ⚠️
-- [ ] **Hosted Application URL** - Add to line 13 (deploy to Vercel/Netlify/Render/AWS/GCP/Azure)
+### **Submission Requirements** ✅
+- [x] **Hosted Application URL** - https://pharma-gen-ai.vercel.app (Frontend on Vercel)
+- [x] **Backend API URL** - https://pharmagen-ai.onrender.com (Backend on Render)
 - [ ] **LinkedIn Video Demo** - Record 2-5 min demo, post with #RIFT2026 #PharmaGuard tags, tag @RIFT
-- [ ] **GitHub Repository** - Current repo (ensure public + all files included)
-- [ ] **README.md** - ✅ This file (covers all required sections)
+- [x] **GitHub Repository** - Current repo (ensure public + all files included)
+- [x] **README.md** - ✅ This file (covers all required sections)
 
 ### **To Complete Submission**
-1. Deploy application to public URL
-2. Record LinkedIn demo video
-3. Fill in URLs in lines 13-14
-4. Submit during RIFT submission window (Feb 19, 6-8 PM)
+1. ✅ Deploy application to public URL (Vercel: https://pharma-gen-ai.vercel.app)
+2. ✅ Deploy backend API (Render: https://pharmagen-ai.onrender.com)
+3. Record LinkedIn demo video (2-5 minutes)
+4. Post video with tags: #RIFT2026 #PharmaGuard and tag @RIFT
+5. Submit during RIFT submission window (Feb 19, 6-8 PM)
 
 ---
 
