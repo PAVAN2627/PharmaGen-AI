@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
-import ArchitectureSection from "@/components/landing/ArchitectureSection";
 import GeneDrugSection from "@/components/landing/GeneDrugSection";
 import Footer from "@/components/Footer";
 
@@ -11,7 +10,6 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <FeaturesSection />
-      <ArchitectureSection />
       <GeneDrugSection />
       <Footer />
     </div>

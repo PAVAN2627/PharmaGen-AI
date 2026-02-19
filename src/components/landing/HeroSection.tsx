@@ -52,7 +52,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.SLOW, delay: ANIMATION_DELAYS.SLOW }}
-          className="flex flex-col items-center gap-4 sm:flex-row"
+          className="flex flex-col items-center gap-6 rounded-2xl border-2 border-secondary bg-secondary/10 px-8 py-8 backdrop-blur-sm sm:flex-row sm:gap-4"
         >
           <Link to="/dashboard">
             <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 gap-2 px-8 text-base">
@@ -61,7 +61,7 @@ const HeroSection = () => {
             </Button>
           </Link>
           <a href="#features">
-            <Button size="lg" variant="outline" className="gap-2 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 px-8 text-base">
+            <Button size="lg" className="gap-2 bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 text-base">
               Explore Features
               <ArrowRight className="h-4 w-4" />
             </Button>
@@ -73,7 +73,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.SLOW, delay: 0.5 }}
-          className="mt-20 grid grid-cols-2 gap-6 md:grid-cols-4"
+          className="mt-20 grid grid-cols-2 gap-6 rounded-2xl px-8 py-8 md:grid-cols-4"
         >
           {[
             { value: "100K+", label: "ADR Deaths/Year Preventable" },
@@ -83,10 +83,10 @@ const HeroSection = () => {
           ].map((stat, i) => (
             <div
               key={i}
-              className="rounded-xl border border-primary-foreground/10 bg-primary-foreground/5 px-6 py-4 backdrop-blur-sm"
+              className="rounded-xl border-2 border-secondary bg-primary-foreground/5 px-6 py-4 backdrop-blur-sm"
             >
               <div className="font-display text-2xl font-bold text-secondary">{stat.value}</div>
-              <div className="mt-1 text-xs text-primary-foreground/60">{stat.label}</div>
+              <div className="mt-1 text-xs text-primary-foreground">{stat.label}</div>
             </div>
           ))}
         </motion.div>

@@ -43,22 +43,52 @@ const GeneDrugSection = () => {
             <span>Drug</span>
             <span>Clinical Relevance</span>
           </div>
-          {geneData.map((row, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 * i }}
-              className={`grid grid-cols-3 px-6 py-3.5 text-sm ${
-                i % 2 === 0 ? "bg-card" : "bg-muted/50"
-              }`}
-            >
-              <span className="font-semibold font-display text-primary">{row.gene}</span>
-              <span className="text-foreground">{row.drug}</span>
-              <span className="text-muted-foreground">{row.relevance}</span>
-            </motion.div>
-          ))}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1,
+                  delayChildren: 0.2,
+                },
+              },
+            }}
+          >
+            {geneData.map((row, i) => (
+              <motion.div
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, x: -20, scale: 0.9 },
+                  visible: { 
+                    opacity: 1, 
+                    x: 0, 
+                    scale: 1,
+                    transition: {
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 12,
+                    }
+                  },
+                }}
+                whileHover={{ 
+                  x: 10, 
+                  backgroundColor: "rgba(var(--primary), 0.05)",
+                  transition: { duration: 0.2 }
+                }}
+                className={`grid grid-cols-3 px-6 py-3.5 text-sm cursor-pointer transition-colors ${
+                  i % 2 === 0 ? "bg-card" : "bg-muted/50"
+                }`}
+              >
+                <span className="font-semibold font-display text-primary">{row.gene}</span>
+                <span className="text-foreground">{row.drug}</span>
+                <span className="text-muted-foreground">{row.relevance}</span>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
 
         <motion.div

@@ -38,12 +38,33 @@ const features = [
 
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
+  show: { 
+    transition: { 
+      staggerChildren: 0.12,
+      delayChildren: 0.2,
+    } 
+  },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  hidden: { 
+    opacity: 0, 
+    y: 30,
+    scale: 0.9,
+    rotateY: -10
+  },
+  show: { 
+    opacity: 1, 
+    y: 0,
+    scale: 1,
+    rotateY: 0,
+    transition: { 
+      duration: 0.6,
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    } 
+  },
 };
 
 const FeaturesSection = () => {
@@ -79,13 +100,67 @@ const FeaturesSection = () => {
             <motion.div
               key={i}
               variants={item}
-              className="glass-card group p-6"
+              whileHover={{
+                y: -8,
+                boxShadow: "0 20px 40px rgba(99, 102, 241, 0.15)",
+                transition: { duration: 0.3 }
+              }}
+              className="glass-card group relative overflow-hidden p-6 transition-all duration-300 cursor-pointer"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <f.icon className="h-6 w-6" />
-              </div>
-              <h3 className="mb-2 font-display text-lg font-semibold text-foreground">{f.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+              {/* Animated background glow on hover */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-primary/0 opacity-0 group-hover:opacity-5"
+                animate={{
+                  backgroundPosition: ["0% 0%", "100% 100%"],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+
+              <motion.div
+                className="relative mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-primary-foreground"
+                whileHover={{
+                  scale: 1.15,
+                  rotate: 10,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 10,
+                }}
+              >
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <f.icon className="h-6 w-6" />
+                </motion.div>
+              </motion.div>
+
+              <motion.h3
+                className="relative mb-2 font-display text-lg font-semibold text-foreground"
+                whileHover={{ x: 4 }}
+                transition={{ duration: 0.2 }}
+              >
+                {f.title}
+              </motion.h3>
+
+              <motion.p
+                className="relative text-sm leading-relaxed text-muted-foreground"
+                whileHover={{ color: "var(--foreground)" }}
+                transition={{ duration: 0.2 }}
+              >
+                {f.desc}
+              </motion.p>
+
+              {/* Bottom accent line */}
+              <motion.div
+                className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary to-secondary group-hover:w-full"
+                transition={{ duration: 0.4 }}
+              />
             </motion.div>
           ))}
         </motion.div>
