@@ -22,8 +22,8 @@ PharmaAI solves this critical healthcare challenge by automating pharmacogenomic
 
 ### **[🌐 LIVE APPLICATION](https://pharma-gen-ai.vercel.app)** 
 ### **[🔗 BACKEND API](https://pharmagen-ai.onrender.com)**
-### **[🎬 LINKEDIN VIDEO DEMO](https://linkedin.com/feed/...)** *(Add your LinkedIn video link here - tag @RIFT)*
-### **[📦 GITHUB REPOSITORY](https://github.com/yourusername/PharmaAI)** *(Public repo with full source code)*
+### **[🎬 LINKEDIN VIDEO DEMO](https://linkedin.com/feed/...)** 
+
 
 ---
 
