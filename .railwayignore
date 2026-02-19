@@ -1,0 +1,16 @@
+node_modules
+src
+public
+dist
+bun.lockb
+*.log
+.env.local
+.env.*.local
+components.json
+eslint.config.js
+index.html
+postcss.config.js
+vite.config.ts
+tsconfig.json
+tsconfig.app.json
+tsconfig.node.json
