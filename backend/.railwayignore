@@ -1,0 +1,10 @@
+node_modules
+dist
+*.log
+.env.local
+.env.*.local
+test-data
+uploads
+logs
+*.test.ts
+*.test.js
