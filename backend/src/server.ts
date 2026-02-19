@@ -28,8 +28,27 @@ const uploadsDir = path.join(__dirname, '../uploads');
 app.use(helmet());
 
 // CORS configuration
+const allowedOrigins = [
+  process.env.CORS_ORIGIN?.replace(/\/$/, ''), // Remove trailing slash
+  'http://localhost:8080',
+  'http://localhost:8081',
+  'http://localhost:5173'
+].filter(Boolean);
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:8080',
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    // Remove trailing slash from origin for comparison
+    const normalizedOrigin = origin.replace(/\/$/, '');
+    
+    if (allowedOrigins.some(allowed => allowed === normalizedOrigin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
