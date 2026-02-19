@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: pharmagenai-backend
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: USE_FIREBASE
+        value: true
+      - key: CORS_ORIGIN
+        sync: false

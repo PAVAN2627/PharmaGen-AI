@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: pharmagenai-backend
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: USE_FIREBASE
+        value: true
+      - key: CORS_ORIGIN
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT_PATH
+        value: ./firebase-service-account.json
+    healthCheckPath: /
