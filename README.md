@@ -22,7 +22,7 @@ PharmaAI solves this critical healthcare challenge by automating pharmacogenomic
 
 ### **[🌐 LIVE APPLICATION](https://pharma-gen-ai.vercel.app)** 
 ### **[🔗 BACKEND API](https://pharmagen-ai.onrender.com)**
-### **[🎬 LINKEDIN VIDEO DEMO](https://linkedin.com/feed/...)** 
+### **[🎬 LINKEDIN VIDEO DEMO](https://www.linkedin.com/posts/pavan-mali-1808b6273_rift2026-pharmaguard-pharmacogenomics-ugcPost-7430404507613958144-jwOp?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAELf9HABTLef7utc2UNaZH8FghfPVF6ALw4)** 
 
 
 ---
